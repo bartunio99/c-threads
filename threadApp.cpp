@@ -157,7 +157,7 @@ void makeCustomers(){
         }
 
         thread customerThread(customer, char(currentIndex));
-        customerThread.detach();
+        customerThread.join();
         currentIndex++;
         this_thread::sleep_for(chrono::milliseconds(rand()%10000 + 5000));
     } 
